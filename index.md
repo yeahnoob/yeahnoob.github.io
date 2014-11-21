@@ -17,5 +17,5 @@ Here is my "Posts List".
 
 ## To-Do
 
-This page is still unfinished. (2014-11-21)
+This page is still in very early stage. (2014-11-21)
 
