@@ -2,7 +2,7 @@
 layout: post
 title: "asp.net 平台的 Opensource "
 description: ""
-category: 
+category: [tech, thinking]
 tags: []
 ---
 {% include JB/setup %}
