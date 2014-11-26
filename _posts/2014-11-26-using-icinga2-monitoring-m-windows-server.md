@@ -22,10 +22,14 @@ tags: [icinga2]
 icinga2.conf
 
 ``````
+... ...
+
 include <itl>
 include <plugins>
 
 include <manubulon>
+
+... ...
 ``````
 
 新建一个 http_server.conf ，建立一个从192.168.0.19服务器到 icinga2 
