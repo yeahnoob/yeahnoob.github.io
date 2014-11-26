@@ -128,7 +128,7 @@ object Service "snmp_p_w3wp" {
 
 PS. 个人是很喜欢VIM里面的彩色Syntax, 所以还特意把 icinga2 的配置文件的 
  VIM Syntax highlight 设置单独 fork 成一个 VIM Plugin到 
- (icinga2-vim)[https://github.com/yeahnoob/icinga2-vim] 上。以后用
+ (https://github.com/yeahnoob/icinga2-vim)[icinga2-vim] 上。以后用
 Vundle 配置 VIM 的icinga2配置能方便一些，直接在 ~/.vimrc 里加个
 
 ```viml
