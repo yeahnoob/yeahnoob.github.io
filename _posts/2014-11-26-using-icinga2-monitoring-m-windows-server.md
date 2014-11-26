@@ -126,6 +126,7 @@ object Service "snmp_p_w3wp" {
 
 万一遇到报错，可以去 icinga2 的 /var/... .../*.log 文件里去查。
 
+<<<<<<< HEAD
 PS. 个人是很喜欢VIM里面的彩色Syntax, 所以特意把 icinga2 配置文件的 
  VIM Syntax highlight plugin 从 (Icinga/icing2)[https://github.com/Icinga/icinga2] 
  单独 fork 成一个 VIM Plugin 到 (icinga2-vim)[https://github.com/yeahnoob/icinga2-vim] 。
