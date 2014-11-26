@@ -3,7 +3,7 @@ layout: post
 title: "Using Icinga2 to monitor remote M$ Windows Server"
 description: ""
 category: [tech, administration]
-tags: []
+tags: [icinga2]
 ---
 {% include JB/setup %}
 
@@ -21,19 +21,19 @@ tags: []
 
 icinga2.conf
 
-```
+``````
 include <itl>
 include <plugins>
 
 include <manubulon>
-```
+``````
 
 新建一个 http_server.conf ，建立一个从192.168.0.19服务器到 icinga2 
 的"http_server" 这个 Host 的对应关系
 
 http_server.conf
 
-```
+``````
 object Host "http_server" {
   import "generic-host"
 
@@ -43,13 +43,13 @@ object Host "http_server" {
   vars.sla = "24x7"
 
 }
-```
+``````
 
 在 commands.conf 里添加
 
 commands.conf
 
-```
+``````
 ... ...
 
 object CheckCommand "my-snmp-process" {
@@ -71,14 +71,14 @@ object CheckCommand "my-snmp-process" {
   }
 
 }
-```
+``````
 
 最后是新建一个 snmp-process.conf ，明确需要监测的远端服务器进程。
 下面这段有建立两个 icinga2 Service 进程
 
 snmp-process.conf
 
-```
+``````
 object Service "snmp_p_aspnet_stat" {
   import "generic-service"
 
@@ -116,23 +116,18 @@ object Service "snmp_p_w3wp" {
 
   vars.sla = "24x7"
 }
-```
+``````
 
 最后重新装载自己linux管理器上 icinga2 的配置文件
 
-```
+``````
   # service icinga2 reload
-```
+``````
 
 万一遇到报错，可以去 icinga2 的 /var/... .../*.log 文件里去查。
 
-PS. 个人是很喜欢VIM里面的彩色Syntax, 所以还特意把 icinga2 的配置文件的 
- VIM Syntax highlight 设置单独 fork 成一个 VIM Plugin到 
- (icinga2-vim)[https://github.com/yeahnoob/icinga2-vim] 上。以后用
-Vundle 配置 VIM 的icinga2配置能方便一些，直接在 ~/.vimrc 里加个
-
-```viml
-Plugin 'yeahnoob/icinga2-vim'
-```
-
-就可以。
+PS. 个人是很喜欢VIM里面的彩色Syntax, 所以特意把 icinga2 配置文件的 
+ VIM Syntax highlight plugin 从 (Icinga/icing2)[https://github.com/Icinga/icinga2] 
+ 单独 fork 成一个 VIM Plugin 到 (icinga2-vim)[https://github.com/yeahnoob/icinga2-vim] 。
+ 以后用 Vundle 配置 VIM 的 icinga2 高亮能方便一些，直接在 ~/.vimrc 里加个
+`` Plugin 'yeahnoob/icinga2-vim' `` 就可以。
